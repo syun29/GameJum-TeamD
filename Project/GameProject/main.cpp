@@ -103,8 +103,7 @@ void Init(void)
 
 	//èºâ∫
 
-
-
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
 
 
 
