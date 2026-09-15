@@ -1,4 +1,5 @@
 #include "Base/Base.h"
+#include"Game/Player.h"
 
 void MainLoop(void) {
 	//--------------------------------------------------------------
@@ -107,6 +108,7 @@ void Init(void)
 
 
 
+	new Player(CVector2D(0, 0));
 
 
 
@@ -114,8 +116,7 @@ void Init(void)
 
 
 
-
-
+	
 
 
 
