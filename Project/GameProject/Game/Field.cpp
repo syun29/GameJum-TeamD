@@ -24,23 +24,23 @@ Field::Field()
 
 void Field::Draw()
 {
-	//for (int i = 0; i < MAP_HEIGHT; i++) {
-	//	for (int j = 0; j < MAP_WIDTH; j++) {
-	//		//表示しない制御
-	//		if (m_stage_data[i][j] == 0)continue;
-	//		int t = m_stage_data[i][j];
-	//		//画像切り抜き
-	//		m_img.SetRect(32 * t, 0, 32 * t + 32, 32);
-	//		//表示サイズ設定
-	//		m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
-	//		//表示位置設定
-	//		m_img.SetPos(MAP_TIP_SIZE * j - m_scroll.x,
-	//			MAP_TIP_SIZE * i - m_scroll.y);
-	//		//描画
-	//		m_img.Draw();
-	//	}
-	//}
-	m_img.Draw();
+	for (int i = 0; i < MAP_HEIGHT; i++) {
+		for (int j = 0; j < MAP_WIDTH; j++) {
+			//表示しない制御
+			if (m_stage_data[i][j] == 0)continue;
+			int t = m_stage_data[i][j];
+			//画像切り抜き
+			m_img.SetRect(48 * t, 0, 48 * t + 48, 48);
+			//表示サイズ設定
+			m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
+			//表示位置設定
+			m_img.SetPos(MAP_TIP_SIZE * j - m_scroll.x,
+				MAP_TIP_SIZE * i - m_scroll.y);
+			//描画
+			m_img.Draw();
+		}
+	}
+	
 }
 
 int Field::GetTip(const CVector2D& pos, int* tx, int* ty)
