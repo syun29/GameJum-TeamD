@@ -105,7 +105,7 @@ void Init(void)
 	//松下
 
 	//画像の先読み込みと先登録　"リソース名"      "ファイル名"   アニメーションデータ, 幅、高さ
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Astronaut_Idle.png", Player::_anim_data, 16, 16));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", Player::_anim_data, 16, 16));
 
 
 
