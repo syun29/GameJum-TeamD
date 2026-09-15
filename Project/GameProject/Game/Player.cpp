@@ -13,3 +13,11 @@ void Player::Draw() {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
 }
+
+void Player::Collision(Base* b) {
+
+}
+
+TexAnimData Player::_anim_data[] = {
+
+};
