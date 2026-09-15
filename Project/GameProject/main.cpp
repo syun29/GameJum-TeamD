@@ -104,7 +104,7 @@ void Init(void)
 
 	//èºâ∫
 
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/ChatGPT_Image_2026915_13_57_35.png"));
 
 
 
