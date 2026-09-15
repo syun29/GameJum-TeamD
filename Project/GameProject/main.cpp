@@ -1,6 +1,6 @@
 #include "Base/Base.h"
 #include"Game/Player.h"
-
+#include "Game/Field.h"
 void MainLoop(void) {
 	//--------------------------------------------------------------
 	//ƒQ[ƒ€’†‚Ì“®‚«‚Í‚±‚±‚É‘‚­
@@ -86,9 +86,9 @@ void Init(void)
 	//-----------------------------------------------------
 	
 	//–î‘ã
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Stage/MapTip.png"));
 
-
-
+	Base::Add(new Field());
 
 
 
