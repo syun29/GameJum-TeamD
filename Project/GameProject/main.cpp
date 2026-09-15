@@ -86,7 +86,7 @@ void Init(void)
 	//-----------------------------------------------------
 	
 	//–î‘ã
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Stage/MapTip.png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Stage/Map.png"));
 
 	Base::Add(new Field());
 
