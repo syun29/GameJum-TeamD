@@ -2,7 +2,17 @@
 
 Player::Player(const CVector2D& pos) : Base(eType_Player) {
 	m_img = COPY_RESOURCE("Player", CImage);
-	m_pos = pos;
+	//座標設定
+	m_pos_old = m_pos = pos;
+	//サイズ設定
+	
+
+
+	//通常状態へ
+	m_state = eState_Idle;
+	//着地フラグ
+	m_is_ground = true;
+
 }
 
 void Player::Update() {
