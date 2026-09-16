@@ -62,5 +62,5 @@ void Player::Collision(Base* b) {
 }
 
 TexAnimData Player::_anim_data[] = {
-
+	0
 };
