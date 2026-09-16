@@ -134,21 +134,23 @@ void Player::Draw()
 void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
-	case eType_Field:
-		//Feild型へキャスト、型変換できたら
-		/*if (Field* f = dynamic_cast <Field*>(b)) {
-			//地面より下にいったら
-			if (m_pos.y > f->GetGroundY()) {
-				//地面の高さに戻す
-				m_pos.y = f->GetGroundY();
-				//落下速度リセット
-				m_vec.y = 0;
-				//接地フラグON
-				m_is_ground = true;
+		//case eType_Field:
+			//Feild型へキャスト、型変換できたら
+			/*if (Field* f = dynamic_cast <Field*>(b)) {
+				//地面より下にいったら
+				if (m_pos.y > f->GetGroundY()) {
+					//地面の高さに戻す
+					m_pos.y = f->GetGroundY();
+					//落下速度リセット
+					m_vec.y = 0;
+					//接地フラグON
+					m_is_ground = true;
+				}
 			}
-		}*/
-		break;
+			break;*/
+
 	}
+
 
 }
 
