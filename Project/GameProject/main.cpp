@@ -117,7 +117,7 @@ void Init(void)
 
 
 
-	Base::Add(new Player(CVector2D(256, 540), false));
+	//Base::Add(new Player(CVector2D(256, 540), false));
 
 
 
