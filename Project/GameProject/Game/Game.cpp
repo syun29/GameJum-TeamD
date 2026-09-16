@@ -8,7 +8,7 @@ Game::Game() :Base(eType_Scene)
 {
     
     new Field();
-
+    new Player(CVector2D(256, 540), false);
 }
 void Game::Update()
 {
