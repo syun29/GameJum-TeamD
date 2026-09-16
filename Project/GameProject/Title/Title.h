@@ -7,7 +7,8 @@ private:
 	//画像
 	CImage m_img;
 	CImage m_font;
-
+	//待ち時間
+	int m_cnt;
 	//フォント画像のサイズ
 	CVector2D m_fontSize;
 
