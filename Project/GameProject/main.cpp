@@ -1,6 +1,13 @@
 #include "Base/Base.h"
 #include"Game/Player.h"
 #include "Game/Field.h"
+#include "Title/Title.h"
+
+
+
+
+
+
 void MainLoop(void) {
 	//--------------------------------------------------------------
 	//ƒQ[ƒ€’†‚Ì“®‚«‚Í‚±‚±‚É‘‚­
@@ -87,14 +94,14 @@ void Init(void)
 	
 	//–î‘ã
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Stage/Map.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title/Title.png"));
+	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
 
-	Base::Add(new Field());
-
-
-
-
+	Base::Add(new Title());
 
 
+
+	//Base::Add(new Field());
 
 
 

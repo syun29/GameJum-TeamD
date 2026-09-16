@@ -11,6 +11,9 @@
     <ClInclude Include="Game\Field.h">
       <Filter>Game\Field</Filter>
     </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -23,6 +26,9 @@
     <ClCompile Include="Game\Field.cpp">
       <Filter>Game\Field</Filter>
     </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -33,6 +39,9 @@
     </Filter>
     <Filter Include="Game\Field">
       <UniqueIdentifier>{7e370350-5830-4f32-8061-5a5086525294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{82c3579c-7203-4815-88b5-aefed92c4c69}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
