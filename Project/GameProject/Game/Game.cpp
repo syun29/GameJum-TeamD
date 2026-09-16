@@ -16,4 +16,5 @@ void Game::Update()
         Base::KillAll();
         //タイトルシーンへ
         new Title();
+    }
 }
