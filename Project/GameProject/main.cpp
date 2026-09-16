@@ -131,7 +131,7 @@ void Init(void)
 
 
 	//êÏë∫
-	ADD_RESOURCE("Needle", CImage::CreateImage("Image/Needle.png"));
+	ADD_RESOURCE("Needle", CImage::CreateImage("Image/Needle/Needle.png"));
 
 
 
