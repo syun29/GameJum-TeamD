@@ -1,4 +1,5 @@
 #include "Title.h"
+#include "Game/Game.h"
 
 Title::Title()
 	: Base(eType_Scene)
