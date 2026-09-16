@@ -52,6 +52,17 @@ void Player::StateIdle()
 		move_flag = true;
 	}
 
+	//重力反転
+	/*if (PUSH(CInput::eButton3)) {
+		//trueとfalseを切り替える
+		if (m_gravity_flip == false) {
+			m_gravity_flip = true;
+		}
+		else {
+			m_gravity_flip = false;
+		}
+	}*/
+
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton5)) {
 		m_vec.y = -jump_pow;
@@ -101,9 +112,9 @@ void Player::Update()
 		StateIdle();
 		break;
 		//ダウン状態
-	case eState_Down:
+	/*case eState_Down:
 		StateDown();
-		break;
+		break;*/
 	}
 
 	//落ちていたら落下中状態へ移行
@@ -192,12 +203,12 @@ static TexAnim _jumpDown[] = {
 };
 
 static TexAnim _run[] = {
-	{15,2},
-	{16,2},
-	{17,2},
-	{18,2},
-	{19,2},
-	{20,2},
+	{15,4},
+	{16,4},
+	{17,4},
+	{18,4},
+	{19,4},
+	{20,4},
 };
 
 TexAnimData Player::_anim_data[] = {
