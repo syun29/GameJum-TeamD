@@ -98,7 +98,7 @@ void Init(void)
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title/Title.png"));
 	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
 
-	Base::Add(new Title());
+	new Title();
 
 
 

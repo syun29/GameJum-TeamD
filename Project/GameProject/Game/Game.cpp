@@ -6,7 +6,7 @@
 
 Game::Game() :Base(eType_Scene)
 {
-    new Title();
+   // new Title();
     new Field();
     new Player(CVector2D(258, 540), false);
 }
