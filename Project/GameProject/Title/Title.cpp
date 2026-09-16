@@ -1,0 +1,29 @@
+#include "Title.h"
+
+Title::Title()
+	: Base(eType_Scene)
+{
+	//画像の複製
+	m_img = COPY_RESOURCE("Title", CImage);
+	m_font = COPY_RESOURCE("Title_Font", CImage);
+	//GetSizeで元画像のサイズを取得
+	m_fontSize = m_font.GetSize() * 1.2f;
+}
+
+void Title::Update()
+{
+}
+
+void Title::Draw()
+{
+	//サイズを設定
+	m_img.SetSize(1920, 1080);
+	m_font.SetSize(m_fontSize);
+	
+	//座標設定
+	m_font.SetPos(100, 100);
+
+	//描画
+	m_img.Draw();
+	m_font.Draw();
+}
