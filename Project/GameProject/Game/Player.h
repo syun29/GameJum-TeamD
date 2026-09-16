@@ -22,6 +22,8 @@ private:
 	void StateIdle();
 	void StateDown();
 
+	//反転フラグ
+	bool m_flip;
 	//状態変数
 	int m_state;
 	//着地フラグ
@@ -30,7 +32,7 @@ private:
 
 
 public:
-	Player(const CVector2D& pos);
+	Player(const CVector2D& pos, bool flip);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
