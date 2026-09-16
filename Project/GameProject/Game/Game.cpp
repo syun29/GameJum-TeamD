@@ -6,7 +6,8 @@
 
 Game::Game() :Base(eType_Scene)
 {
-    new Title();
+    new Field();
+    new Player(CVector2D(256, 540), false);
 }
 void Game::Update()
 {
@@ -18,3 +19,4 @@ void Game::Update()
         new Title();
     }
 }
+

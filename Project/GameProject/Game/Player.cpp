@@ -1,12 +1,18 @@
 #include"Player.h"
+#include"Field.h"
 
 
-Player::Player(const CVector2D& pos, bool flip) : Base(eType_Player) {
+Player::Player(const CVector2D& pos, bool flip) : Base(eType_Player) 
+{
 	m_img = COPY_RESOURCE("Player", CImage);
 	//座標設定
 	m_pos_old = m_pos = pos;
 	//サイズ設定
-	
+	m_img.SetSize(72, 72);
+	//中心位置設定
+	m_img.SetCenter(36, 69);
+	//当たり判定用短形設定
+	m_rect = CRect(-36, -69, 36, 0);
 
 	//反転フラグ
 	m_flip = flip;
@@ -51,19 +57,98 @@ void Player::StateIdle()
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
+
+	//ジャンプ中なら
+	if (!m_is_ground) {
+		if(m_vec.y < 0)
+			//上昇アニメ―ション
+			m_img.ChangeAnimation(eAnimJumpUp, false);
+		else
+			//下降アニメーション
+			m_img.ChangeAnimation(eAnimJumpDown, false);
+	}
+
+	//地面にいるなら
+	else
+	{
+		if (move_flag) {
+			//走るアニメーション
+			m_img.ChangeAnimation(eAnimRun);
+		}
+		else {
+			//待機アニメーション
+			m_img.ChangeAnimation(eAnimIdle);
+		}
+	}
+}
+
+void Player::StateDown()
+{
+	m_img.ChangeAnimation(eAnimDown, false);
+	if (m_img.CheckAnimationEnd()) {
+		SetKill();
+	}
 }
 
 
-void Player::Update() {
+void Player::Update()
+{
+	m_pos_old = m_pos;
 
+	switch (m_state) {
+		//通常状態
+	case eState_Idle:
+		StateIdle();
+		break;
+		//ダウン状態
+	case eState_Down:
+		StateDown();
+		break;
+	}
+
+	//落ちていたら落下中状態へ移行
+	if (m_is_ground && m_vec.y > GRAVITY * 4)
+		m_is_ground = false;
+
+	//重力による落下処理
+	m_vec.y += GRAVITY;
+	m_pos += m_vec;
+
+	//アニメーションの更新
+	m_img.UpdateAnimation();
+
+	//スクロール値設定
+	m_scroll.x = m_pos.x - 1920 / 2;
+	m_scroll.y = m_pos.y - 900;
 }
 
-void Player::Draw() {
-	m_img.SetPos(m_pos);
+void Player::Draw() 
+{
+	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.Draw();
+
+	//反転設定
+	m_img.SetFlipH(m_flip);
 }
 
-void Player::Collision(Base* b) {
+void Player::Collision(Base* b)
+{
+	switch (b->m_type) {
+	case eType_Field:
+		//Feild型へキャスト、型変換できたら
+		/*if (Field* f = dynamic_cast <Field*>(b)) {
+			//地面より下にいったら
+			if (m_pos.y > f->GetGroundY()) {
+				//地面の高さに戻す
+				m_pos.y = f->GetGroundY();
+				//落下速度リセット
+				m_vec.y = 0;
+				//接地フラグON
+				m_is_ground = true;
+			}
+		}*/
+		break;
+	}
 
 }
 
@@ -86,6 +171,10 @@ static TexAnim _down[] = {
 static TexAnim _jumpUp[] = {
 	{10,4},
 	{11,4},
+};
+
+
+static TexAnim _jumpDown[] = {
 	{12,4},
 	{13,4},
 	{14,4},
@@ -104,5 +193,6 @@ TexAnimData Player::_anim_data[] = {
 	ANIMDATA(_idle),	//eAnimIdle=0
 	ANIMDATA(_down),	//eAnimDown
 	ANIMDATA(_jumpUp),	//eAnimJumpUp
+	ANIMDATA(_jumpDown),//eAnimJumpDown
 	ANIMDATA(_run),		//eAnimRun
 };
