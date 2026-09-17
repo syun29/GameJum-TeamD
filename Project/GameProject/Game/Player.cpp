@@ -165,11 +165,11 @@ void Player::Update()
 	m_scroll.x = m_pos.x - 1920 / 2;
 	m_scroll.y = m_pos.y - 900;
 
-	if (!m_is_ground && m_pos.y < 250) {
+	if (m_pos.y < 0) {
 		SetKill();
 	}
 
-	if (!m_is_ground && m_pos.y > 1500) {
+	if (m_pos.y > 1500) {
 		SetKill();
 	}
 
@@ -251,7 +251,7 @@ static TexAnim _jumpUp[] = {
 static TexAnim _jumpDown[] = {
 	{12,4},
 	{13,4},
-	{14,4},
+	{14,4},	
 };
 
 static TexAnim _run[] = {
