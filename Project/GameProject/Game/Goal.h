@@ -6,7 +6,8 @@ private:
 	bool m_is_goal;
 public:
 	Goal(const CVector2D& pos);
-	void Draw();
+	void Draw()override;
+	void Collision(Base* b)override;
 	bool GetGoal() {
 		return m_is_goal;
 	}
