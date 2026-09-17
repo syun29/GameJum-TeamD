@@ -5,6 +5,7 @@ private:
 	CImage m_img;
 	bool m_is_goal;
 public:
+	static int m_area;
 	Goal(const CVector2D& pos);
 	void Draw()override;
 	void Collision(Base* b)override;

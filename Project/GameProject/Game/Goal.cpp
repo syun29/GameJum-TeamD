@@ -1,6 +1,9 @@
 #include "Goal.h"
 #include "Field.h"
 #include "Player.h"
+
+int Goal::m_area = 1;
+
 Goal::Goal(const CVector2D& pos) :Base(eType_Goal) {
     m_img = COPY_RESOURCE("Goal", CImage);
     m_pos = pos;
@@ -26,7 +29,7 @@ void Goal::Collision(Base* b)
             Base::KillAll();
 
             new Field(2);
-            new Player(CVector2D(256, 540), false);
+            new Player(CVector2D(256, 1329), false);
         }
     }
 }
