@@ -1,7 +1,7 @@
 #pragma once
 
 #include"Base/Base.h"
-#define MAP_WIDTH    50
+#define MAP_WIDTH    70
 #define MAP_HEIGHT		20
 #define MAP_TIP_SIZE	70
 
@@ -11,7 +11,7 @@ private:
 	CImage m_background;
 	int m_stage_data[MAP_HEIGHT][MAP_WIDTH];
 public:
-	Field();
+	Field(int stage);
 	void Draw()override;
 	int GetTip(const CVector2D& pos, int* tx = nullptr, int* ty = nullptr);
 	int GetTip(int x, int y);
