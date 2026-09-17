@@ -2,6 +2,7 @@
 #include "Field.h"
 #include "Player.h"
 #include "UI.h"
+#include "GameClear.h"
 
 int Goal::m_area = 1;
 
@@ -30,6 +31,10 @@ void Goal::AreaChange()
         new Player(CVector2D(256, 1329), false);
         new Goal(CVector2D(2300, 730));
         new UI();
+        break;
+    case 3:
+        new GameClear();
+        break;
     }
 
     m_area++;

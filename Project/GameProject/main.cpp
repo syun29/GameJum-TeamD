@@ -101,13 +101,13 @@ void Init(void)
 	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/Stage/BackGround.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal/Goal.png"));
-
+	
 	new Title();
 
 	//Base::Add(new Field());
 
-
-
+	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Scene/GameOver.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Scene/GameClear.png"));
 
 
 

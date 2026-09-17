@@ -1,4 +1,5 @@
 #include "Needle.h"
+#include "GameOver.h"
 
 Needle::Needle(const CVector2D& pos,bool Flip) : Base(eType_Needle) {
 	m_img = COPY_RESOURCE("Needle", CImage);
@@ -21,7 +22,9 @@ void Needle::Collision(Base* b)
 	{
 	case eType_Player:
 		if (CollisionRect(this, b)) {
-			b->SetKill();
+			Base::KillAll();
+
+			new GameOver();
 		}
 	}
 }

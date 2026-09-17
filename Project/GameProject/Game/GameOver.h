@@ -3,11 +3,11 @@
 
 class GameOver : public Base
 {
-public:
+private:
 
 	CImage m_img;
+public:
 
-private:
 
 	GameOver();
 	void Update()override;
