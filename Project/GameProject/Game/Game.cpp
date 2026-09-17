@@ -10,7 +10,7 @@ Game::Game() :Base(eType_Scene)
     
     new Field();
     new Player(CVector2D(256, 540), false);
-    new Needle(CVector2D(1000, 500));
+    new Needle(CVector2D(900, 1325));
     new Goal(CVector2D(3200, 1275));
 }
 void Game::Update()
