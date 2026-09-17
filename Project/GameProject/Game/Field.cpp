@@ -67,6 +67,7 @@ Field::Field(int stage)
 	for (int j = 0; j < MAP_WIDTH; j++) {
 		for (int i = 0; i < MAP_HEIGHT; i++) {
 			if (m_stage_data[i][j] == 5) {
+				new Needle(CVector2D(j*70,i*70+70));
 				new Needle(CVector2D(j*70,i*70+70),false);
 			}
 			if (m_stage_data[i][j] == 6) {

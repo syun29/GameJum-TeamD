@@ -53,7 +53,7 @@ void Player::StateIdle()
 	}
 
 	//重力反転
-	if (PUSH(CInput::eButton3)) {
+	if (m_is_ground && PUSH(CInput::eButton3)) {
 		//trueとfalseを切り替える
 		if (m_gravity_flip == false) {
 			m_gravity_flip = true;	//重力反転ON
@@ -77,13 +77,17 @@ void Player::StateIdle()
 
 	//ジャンプ中なら
 	if (!m_is_ground) {
-		if (m_vec.y < 0)
+		if (m_vec.y < 0) {
 			//上昇アニメ―ション
 			m_img.ChangeAnimation(eAnimJumpUp, false);
-		else
+		}
+		else {
 			//下降アニメーション
 			m_img.ChangeAnimation(eAnimJumpDown, false);
+		}
 	}
+
+	
 
 	//地面にいるなら
 	else
@@ -141,12 +145,35 @@ void Player::Update()
 	m_pos += m_vec;
 
 
+	//空中にいる時間のカウント
+	/*if (!m_is_ground) {
+		m_air_time++;
+	}
+	else {
+		m_air_time = 0;	//地面に着いたらリセット
+	}
+
+	//一定時間空中にいたらプレイヤー死亡
+	if (m_air_time > 120) {
+		SetKill();
+	}*/
+
 	//アニメーションの更新
 	m_img.UpdateAnimation();
 
 	//スクロール値設定
 	m_scroll.x = m_pos.x - 1920 / 2;
 	m_scroll.y = m_pos.y - 900;
+
+	if (!m_is_ground && m_pos.y < 250) {
+		SetKill();
+	}
+
+	if (!m_is_ground && m_pos.y > 1500) {
+		SetKill();
+	}
+
+
 }
 
 void Player::Draw() 
