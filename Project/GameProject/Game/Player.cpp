@@ -192,12 +192,12 @@ void Player::Update()
 	m_scroll.y = m_pos.y - 900;
 
 	if (m_pos.y < 0) {
-		SetKill();
+		Base::KillAll();
 		new GameOver();
 	}
 
 	if (m_pos.y > 1500) {
-		SetKill();
+		Base::KillAll();
 		new GameOver();
 	}
 
