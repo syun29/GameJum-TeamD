@@ -12,7 +12,7 @@ Player::Player(const CVector2D& pos, bool flip) : Base(eType_Player)
 	//中心位置設定
 	m_img.SetCenter(36, 69);
 	//当たり判定用短形設定
-	m_rect = CRect(-36, -69, 36, 0);
+	m_rect = CRect(-26, -69, 26, 0);
 
 	//反転フラグ
 	m_flip = flip;
@@ -53,25 +53,31 @@ void Player::StateIdle()
 	}
 
 	//重力反転
-	/*if (PUSH(CInput::eButton3)) {
+	if (PUSH(CInput::eButton3)) {
 		//trueとfalseを切り替える
 		if (m_gravity_flip == false) {
-			m_gravity_flip = true;
+			m_gravity_flip = true;	//重力反転ON
 		}
 		else {
-			m_gravity_flip = false;
+			m_gravity_flip = false;	//重力反転OFF
 		}
-	}*/
+	}
 
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton5)) {
-		m_vec.y = -jump_pow;
+		if (m_gravity_flip == true) {
+			m_vec.y = jump_pow;   // 重力反転中 → 下にジャンプ
+		}
+		else {
+			m_vec.y = -jump_pow;  // 通常 → 上にジャンプ
+		}
+
 		m_is_ground = false;
 	}
 
 	//ジャンプ中なら
 	if (!m_is_ground) {
-		if(m_vec.y < 0)
+		if (m_vec.y < 0)
 			//上昇アニメ―ション
 			m_img.ChangeAnimation(eAnimJumpUp, false);
 		else
@@ -91,6 +97,7 @@ void Player::StateIdle()
 			m_img.ChangeAnimation(eAnimIdle);
 		}
 	}
+		
 }
 
 void Player::StateDown()
@@ -122,8 +129,17 @@ void Player::Update()
 		m_is_ground = false;
 
 	//重力による落下処理
-	m_vec.y += GRAVITY;
+
+	float g;
+	if (m_gravity_flip == true) {
+		g = -GRAVITY;
+	}
+	else {
+		g = GRAVITY;
+	}
+	m_vec.y += g;
 	m_pos += m_vec;
+
 
 	//アニメーションの更新
 	m_img.UpdateAnimation();
@@ -136,6 +152,15 @@ void Player::Update()
 void Player::Draw() 
 {
 	m_img.SetPos(GetScreenPos(m_pos));
+
+	//上下反転（重力反転中だけ）
+	if (m_gravity_flip == true) {
+		m_img.SetFlipV(true);   // 重力反転中
+	}
+	else {
+		m_img.SetFlipV(false);  // 通常
+	}
+
 	m_img.Draw();
 
 	//反転設定
