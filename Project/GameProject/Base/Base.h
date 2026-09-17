@@ -13,7 +13,8 @@ enum {
     eType_Effect,
     eType_UI,
     eType_Scene,
-    
+    eType_GameOver,
+    eType_GameClear
 };
 
 //d—Í‰Á‘¬“x
