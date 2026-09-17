@@ -25,7 +25,7 @@ private:
 	//反転フラグ
 	bool m_flip;
 	//重力反転フラグ
-	//bool m_gravity_flip = false;
+	bool m_gravity_flip = false;
 	//状態変数
 	int m_state;
 	//着地フラグ
