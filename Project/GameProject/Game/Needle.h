@@ -5,4 +5,5 @@ private:
 CImage m_img;
 public: Needle(const CVector2D& pos);
 	  void Draw();
+	  void Collision(Base* b);
 };
