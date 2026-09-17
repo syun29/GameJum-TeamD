@@ -162,6 +162,7 @@ void Player::Draw()
 	}
 
 	m_img.Draw();
+	DrawRect();
 	//îΩì]ê›íË
 	m_img.SetFlipH(m_flip);
 }

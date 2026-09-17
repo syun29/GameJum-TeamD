@@ -3,7 +3,8 @@
 class Needle : public Base {
 private:
 CImage m_img;
-public: Needle(const CVector2D& pos);
+bool m_Flip;
+public: Needle(const CVector2D& pos,bool Flip);
 	  void Draw();
 	  void Collision(Base* b);
 };
