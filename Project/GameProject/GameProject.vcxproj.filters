@@ -29,7 +29,14 @@
     <ClInclude Include="Game\GameData.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Enemy.h">
+    <ClInclude Include="Game\GameClear.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\GameOver.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>    <ClInclude Include="Game\Bullet.h">
+      <Filter>Game</Filter>
+    </ClInclude  </ItemGroup>    <ClInclude Include="Game\Enemy.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +69,14 @@
     <ClCompile Include="Game\GameData.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Enemy.cpp">
+    <ClCompile Include="Game\GameClear.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\GameOver.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>    <ClCompile Include="Game\Bullet.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>  </ItemGroup>    <ClCompile Include="Game\Enemy.cpp">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -78,6 +92,9 @@
     </Filter>
     <Filter Include="Title">
       <UniqueIdentifier>{82c3579c-7203-4815-88b5-aefed92c4c69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{0dea854e-7e6b-4fef-bc5a-20815e0e551f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

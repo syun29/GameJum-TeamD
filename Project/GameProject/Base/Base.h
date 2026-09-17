@@ -6,6 +6,7 @@ enum {
     eType_AreaChange,
     eType_Goal,
     eType_Player,
+    eType_Bullet,
     eType_Needle,
     eType_Enemy,
     eType_Player_Attack,
@@ -13,7 +14,8 @@ enum {
     eType_Effect,
     eType_UI,
     eType_Scene,
-    
+    eType_GameOver,
+    eType_GameClear
 };
 
 //èdóÕâ¡ë¨ìx

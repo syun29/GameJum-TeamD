@@ -11,13 +11,16 @@ Game::Game() :Base(eType_Scene)
 {
     
     new Field(0);
-    new Player(CVector2D(256, 540), false);
+    new Player(CVector2D(256, 1329), false);
     new Goal(CVector2D(3200, 1275));
 
     
 
+
+
     new UI();
     m_cnt = 0;
+    GameData::s_time = 60 * 420;   //ŽžŠÔƒŠƒZƒbƒg
 }
 void Game::Update()
 {

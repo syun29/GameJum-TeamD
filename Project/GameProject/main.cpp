@@ -2,6 +2,7 @@
 #include "Game/Game.h"
 #include"Game/Player.h"
 #include "Game/Enemy.h"
+#include"Game/Bullet.h"
 #include "Game/Field.h"
 #include "Title/Title.h"
 #include "Game/Needle.h"
@@ -101,13 +102,13 @@ void Init(void)
 	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/Stage/BackGround.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal/Goal.png"));
-
+	
 	new Title();
 
 	//Base::Add(new Field());
 
-
-
+	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Scene/GameOver.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Scene/GameClear.png"));
 
 
 
@@ -117,6 +118,7 @@ void Init(void)
 	//画像の先読み込みと先登録　"リソース名"      "ファイル名"   アニメーションデータ, 幅、高さ
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player/Player.png", Player::_anim_data, 24, 24));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI/UI.png"));
+	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet/Ice Particle.png"));
 
 
 
