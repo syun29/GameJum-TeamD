@@ -12,6 +12,7 @@ enum {
     eType_Effect,
     eType_UI,
     eType_Scene,
+    eType_Needle,
 };
 
 //d—Í‰Á‘¬“x
