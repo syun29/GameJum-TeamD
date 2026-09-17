@@ -53,7 +53,7 @@ void Player::StateIdle()
 	}
 
 	//d—Í”½“]
-	if (PUSH(CInput::eButton3)) {
+	if (m_is_ground && PUSH(CInput::eButton3)) {
 		//true‚Æfalse‚ğØ‚è‘Ö‚¦‚é
 		if (m_gravity_flip == false) {
 			m_gravity_flip = true;	//d—Í”½“]ON
