@@ -8,8 +8,10 @@ Enemy::Enemy(const CVector2D& pos, bool flip) : Base(eType_Enemy) {
 	m_img.ChangeAnimation(0);
 	// 座標の設定
 	m_pos_old = m_pos = pos;
+	m_img.SetSize(64, 64);
 	// 中心位置（描画・回転の基準点）の設定
-	m_img.SetCenter(128, 224);
+	m_img.SetCenter(32, 32);
+	m_img.SetRect(-32, -32, 32, 0);
 	// 左右反転フラグの設定
 	m_flip = flip;
 }
