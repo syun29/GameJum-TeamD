@@ -25,6 +25,8 @@
     <ClInclude Include="Game\Goal.h" />
     <ClInclude Include="Game\Needle.h" />
     <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Game\GameData.h" />
+    <ClInclude Include="Game\UI.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Title\Title.h" />
   </ItemGroup>
@@ -35,6 +37,8 @@
     <ClCompile Include="Game\Goal.cpp" />
     <ClCompile Include="Game\Needle.cpp" />
     <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\GameData.cpp" />
+    <ClCompile Include="Game\UI.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
