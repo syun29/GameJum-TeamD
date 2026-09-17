@@ -9,6 +9,8 @@ Game::Game() :Base(eType_Scene)
     
     new Field();
     new Player(CVector2D(256, 540), false);
+    
+    new Goal(CVector2D(3200, 1275));
 }
 void Game::Update()
 {
