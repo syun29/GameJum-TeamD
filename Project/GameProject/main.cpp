@@ -132,7 +132,7 @@ void Init(void)
 
 	//êÏë∫
 	ADD_RESOURCE("Needle", CImage::CreateImage("Image/Needle/Needle.png"));
-	new Needle(CVector2D(1000, 50));
+	//new Needle(CVector2D(1000, 500));
 
 
 
