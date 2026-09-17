@@ -25,7 +25,7 @@ void Goal::Collision(Base* b)
         {
             Base::KillAll();
 
-            new Field(1);
+            new Field(2);
             new Player(CVector2D(256, 540), false);
         }
     }
