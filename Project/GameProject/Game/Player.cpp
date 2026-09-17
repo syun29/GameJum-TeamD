@@ -179,7 +179,7 @@ void Player::Draw()
 	else {
 		m_img.SetFlipV(false);  // ’Êí
 	}
-
+	FONT_T()->Draw(10, 350, 1, 1, 1, "%f:XÀ•W %f:YÀ•W",m_pos.x,m_pos.y);
 	m_img.Draw();
 	DrawRect();
 	//”½“]İ’è
