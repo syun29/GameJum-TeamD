@@ -1,4 +1,5 @@
 #include"Player.h"
+#include"Bullet.h"
 #include"Field.h"
 
 
@@ -50,6 +51,16 @@ void Player::StateIdle()
 		//反転フラグ
 		m_flip = true;
 		move_flag = true;
+	}
+
+	//弾の発射
+	if (PUSH(CInput::eMouseL)) {
+		CVector2D bulletPos;
+
+		bulletPos.x = m_pos.x + 50;	//プレイヤーの右端
+		bulletPos.y = m_pos.y - 34;	//プレイヤーの胸辺り
+
+		new Bullet(bulletPos);
 	}
 
 	//重力反転
