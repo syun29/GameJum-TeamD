@@ -55,12 +55,26 @@ void Player::StateIdle()
 
 	//弾の発射
 	if (PUSH(CInput::eMouseL)) {
-		CVector2D bulletPos;
+		if (m_flip == false) {
+			//右
+			CVector2D bulletPos;
 
-		bulletPos.x = m_pos.x + 50;	//プレイヤーの右端
-		bulletPos.y = m_pos.y - 34;	//プレイヤーの胸辺り
+			bulletPos.x = m_pos.x + 50;	//プレイヤーの右端
+			bulletPos.y = m_pos.y - 34;	//プレイヤーの胸辺り
 
-		new Bullet(bulletPos);
+			Bullet* b = new Bullet(bulletPos);
+			b->m_dir = 1;	//右向き
+		}
+		else {
+			//左
+			CVector2D bulletPos;
+
+			bulletPos.x = m_pos.x - 10;	//プレイヤーの左端
+			bulletPos.y = m_pos.y - 34;	//プレイヤーの胸辺り
+
+			Bullet* b = new Bullet(bulletPos);
+			b->m_dir = -1;	//左向き
+		}
 	}
 
 	//重力反転
@@ -198,7 +212,7 @@ void Player::Draw()
 	else {
 		m_img.SetFlipV(false);  // 通常
 	}
-	FONT_T()->Draw(10, 350, 1, 1, 1, "%f:X座標 %f:Y座標",m_pos.x,m_pos.y);
+	//FONT_T()->Draw(10, 350, 1, 1, 1, "%f:X座標 %f:Y座標",m_pos.x,m_pos.y);
 	m_img.Draw();
 	DrawRect();
 	//反転設定
