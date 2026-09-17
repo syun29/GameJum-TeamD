@@ -1,9 +1,9 @@
 #pragma once
 
 #include"Base/Base.h"
-#define MAP_WIDTH    20
-#define MAP_HEIGHT		12
-#define MAP_TIP_SIZE	100
+#define MAP_WIDTH    50
+#define MAP_HEIGHT		20
+#define MAP_TIP_SIZE	70
 
 class Field : public Base {
 private:
