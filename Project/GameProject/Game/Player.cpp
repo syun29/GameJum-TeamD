@@ -1,7 +1,7 @@
 #include"Player.h"
 #include"Bullet.h"
 #include"Field.h"
-
+#include "GameOver.h"
 
 Player::Player(const CVector2D& pos, bool flip) : Base(eType_Player) 
 {
@@ -134,6 +134,7 @@ void Player::StateDown()
 	m_img.ChangeAnimation(eAnimDown, false);
 	if (m_img.CheckAnimationEnd()) {
 		SetKill();
+		new GameOver();
 	}
 }
 
@@ -192,10 +193,12 @@ void Player::Update()
 
 	if (m_pos.y < 0) {
 		SetKill();
+		new GameOver();
 	}
 
 	if (m_pos.y > 1500) {
 		SetKill();
+		new GameOver();
 	}
 
 
