@@ -1,5 +1,6 @@
 #include "Title.h"
 #include "Game/Game.h"
+#include "Game/Goal.h"
 
 Title::Title()
 	: Base(eType_Scene)
@@ -9,6 +10,8 @@ Title::Title()
 	m_font = COPY_RESOURCE("Title_Font", CImage);
 	//GetSize‚ÅŒ³‰æ‘œ‚ÌƒTƒCƒY‚ðŽæ“¾
 	m_fontSize = m_font.GetSize() * 1.2f;
+
+	Goal::m_area = 1;
 }
 
 void Title::Update()
