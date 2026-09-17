@@ -18,6 +18,7 @@ Game::Game() :Base(eType_Scene)
     
 
     new UI();
+    m_cnt = 0;
 }
 void Game::Update()
 {

@@ -4,6 +4,9 @@
 
 class Game : public Base {
 public:
+    int m_cnt;
+
+
     Game();
     void Update();
 };

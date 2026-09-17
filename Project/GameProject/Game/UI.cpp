@@ -17,13 +17,13 @@ void UI::Draw()
 {
     int time = GameData::s_time / 60;   //秒に変換
 
-    for (int i = 0; i < 3; i++, time /= 10) {
+    for (int i = 0; i < 7; i++, time /= 10) {
         int t = time % 10;
 
         m_img.SetRect(16 * t, 16, 16 * t + 16, 32);  //画像の切り抜き
         m_img.SetSize(64, 64);
 
-        m_img.SetPos(1600 - 64 * i, 50);  //右上に表示
+        m_img.SetPos(1700 - 64 * i, 50);  //右上に表示
         m_img.Draw();
     }
 }

@@ -77,12 +77,18 @@ void Player::StateIdle()
 
 	//ジャンプ中なら
 	if (!m_is_ground) {
-		if (m_vec.y < 0)
+		if (m_vec.y < 0) {
 			//上昇アニメ―ション
 			m_img.ChangeAnimation(eAnimJumpUp, false);
-		else
+		}
+		else {
 			//下降アニメーション
 			m_img.ChangeAnimation(eAnimJumpDown, false);
+		}
+	}
+
+	if (!m_is_ground) {
+		m_cnt++;
 	}
 
 	//地面にいるなら
@@ -140,6 +146,19 @@ void Player::Update()
 	m_vec.y += g;
 	m_pos += m_vec;
 
+
+	//空中にいる時間のカウント
+	/*if (!m_is_ground) {
+		m_air_time++;
+	}
+	else {
+		m_air_time = 0;	//地面に着いたらリセット
+	}
+
+	//一定時間空中にいたらプレイヤー死亡
+	if (m_air_time > 120) {
+		SetKill();
+	}*/
 
 	//アニメーションの更新
 	m_img.UpdateAnimation();

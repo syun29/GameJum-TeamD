@@ -28,6 +28,8 @@ private:
 	bool m_gravity_flip = false;
 	//ó‘Ô•Ï”
 	int m_state;
+	//‹ó’†‚É‚¢‚éŠÔ
+	int m_cnt = 0;
 	//’…’nƒtƒ‰ƒO
 	bool m_is_ground;
 	CImage m_img;
