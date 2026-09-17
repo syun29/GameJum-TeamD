@@ -3,7 +3,7 @@
 #include"Game/Player.h"
 #include "Game/Field.h"
 #include "Title/Title.h"
-
+#include "Game/Needle.h"
 
 
 
@@ -132,7 +132,7 @@ void Init(void)
 
 	//êÏë∫
 	ADD_RESOURCE("Needle", CImage::CreateImage("Image/Needle/Needle.png"));
-
+	new Needle(CVector2D(1000, 50));
 
 
 
