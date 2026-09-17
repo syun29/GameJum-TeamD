@@ -28,14 +28,14 @@ Player::Player(const CVector2D& pos, bool flip) : Base(eType_Player)
 void Player::StateIdle()
 {
 	//移動量
-	const float move_speed = 7;
+	const float move_speed = 5;
 	//移動フラグ
 	bool move_flag = false;
 	//ジャンプ力
-	const float jump_pow = 21;
+	const float jump_pow = 15;
 
 	//右移動
-	if (HOLD(CInput::eRight)) {
+	if (HOLD(CInput::eButton2)) {
 		//移動量を設定
 		m_pos.x += move_speed;
 		//反転フラグ
@@ -44,7 +44,7 @@ void Player::StateIdle()
 	}
 
 	//左移動
-	if (HOLD(CInput::eLeft)) {
+	if (HOLD(CInput::eButton1)) {
 		//移動量を設定
 		m_pos.x += -move_speed;
 		//反転フラグ
@@ -52,8 +52,19 @@ void Player::StateIdle()
 		move_flag = true;
 	}
 
+	//重力反転
+	/*if (PUSH(CInput::eButton3)) {
+		//trueとfalseを切り替える
+		if (m_gravity_flip == false) {
+			m_gravity_flip = true;
+		}
+		else {
+			m_gravity_flip = false;
+		}
+	}*/
+
 	//ジャンプ
-	if (m_is_ground && PUSH(CInput::eButton2)) {
+	if (m_is_ground && PUSH(CInput::eButton5)) {
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
@@ -101,9 +112,9 @@ void Player::Update()
 		StateIdle();
 		break;
 		//ダウン状態
-	case eState_Down:
+	/*case eState_Down:
 		StateDown();
-		break;
+		break;*/
 	}
 
 	//落ちていたら落下中状態へ移行
@@ -134,20 +145,29 @@ void Player::Draw()
 void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
-		//case eType_Field:
-			//Feild型へキャスト、型変換できたら
-			/*if (Field* f = dynamic_cast <Field*>(b)) {
-				//地面より下にいったら
-				if (m_pos.y > f->GetGroundY()) {
-					//地面の高さに戻す
-					m_pos.y = f->GetGroundY();
-					//落下速度リセット
+		case eType_Field:
+			if (Field* f = dynamic_cast<Field*>(b)) {
+
+				// 横方向の当たり判定（壁）
+				int t = f->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);
+				if (t != 0) {
+					m_pos.x = m_pos_old.x;
+				}
+
+				// 縦方向の当たり判定（地面）
+				t = f->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect);
+				if (t != 0) {
+					// 地面に当たったのでY座標を戻す
+					m_pos.y = m_pos_old.y;
+
+					// 落下速度リセット
 					m_vec.y = 0;
-					//接地フラグON
+
+					// 接地フラグON
 					m_is_ground = true;
 				}
 			}
-			break;*/
+			break;
 
 	}
 
@@ -183,12 +203,12 @@ static TexAnim _jumpDown[] = {
 };
 
 static TexAnim _run[] = {
-	{15,2},
-	{16,2},
-	{17,2},
-	{18,2},
-	{19,2},
-	{20,2},
+	{15,4},
+	{16,4},
+	{17,4},
+	{18,4},
+	{19,4},
+	{20,4},
 };
 
 TexAnimData Player::_anim_data[] = {

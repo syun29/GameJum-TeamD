@@ -97,7 +97,7 @@ void Init(void)
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Stage/Map.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title/Title.png"));
 	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
-
+	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/Stage/BackGround.png"));
 	new Title();
 
 
