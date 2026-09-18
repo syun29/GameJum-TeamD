@@ -20,7 +20,7 @@ Bullet::Bullet(const CVector2D& pos) : Base(eType_Bullet)
 
 void Bullet::Update() {
 	
-	const int move_speed = 5;
+	const int move_speed = 15;
 
 	
 	m_pos.x += move_speed * m_dir;
@@ -28,7 +28,7 @@ void Bullet::Update() {
 	// ‰æ–Êã‚ÌˆÊ’u‚ðŒvŽZ
 	CVector2D screenPos = Base::GetScreenPos(m_pos);
 
-	if (screenPos.x > SCREEN_WIDTH + 50 || screenPos.x < -50) {
+	if (screenPos.x > screenPos.x + 10.0f || screenPos.x < screenPos.x-10.0f) {
 		SetKill();
 	}
 
