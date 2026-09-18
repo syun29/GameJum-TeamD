@@ -41,6 +41,9 @@
     <ClCompile Include="Game\Field.cpp">
       <Filter>Game\Field</Filter>
     </ClCompile>
+    <ClCompile Include="Game\SceneChange.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.h" />
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="Game\Field.h">
       <Filter>Game\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SceneChange.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

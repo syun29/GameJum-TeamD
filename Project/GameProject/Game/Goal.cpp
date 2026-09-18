@@ -4,6 +4,7 @@
 #include "UI.h"
 #include "GameClear.h"
 #include "Enemy.h"
+#include "SceneChange.h"
 
 int Goal::m_area = 1;
 
@@ -55,9 +56,18 @@ void Goal::Collision(Base* b)
     {
     case eType_Player:
 
-        if (CollisionRect(this, b))
+        if (CollisionRect(this, b)&&m_is_goal==false)
         {
-            AreaChange();
+            if (m_area == 3)
+            {
+                AreaChange();
+            }
+            else
+            {
+                new SceneChange();
+                m_is_goal = true;
+            }
+
         }
     }
 }

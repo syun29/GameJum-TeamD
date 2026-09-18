@@ -114,7 +114,7 @@ void Init(void)
 
 	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Scene/GameOver.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Scene/GameClear.png"));
-
+	ADD_RESOURCE("Scene", CImage::CreateImage("Image/Scene/Scene.png"));
 
 
 
