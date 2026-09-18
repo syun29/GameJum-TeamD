@@ -25,15 +25,15 @@ void Goal::AreaChange()
     {
     case 1:
         new Player(CVector2D(321, 1329), false);
-        new Goal(CVector2D(4856, 1290));
         new Enemy(CVector2D(2171, 769), false);
+        new Goal(CVector2D(4800, 1290));
         new UI();
         break;
     case 2:
         new Player(CVector2D(256, 1329), false);
-        new Goal(CVector2D(2300, 730));
         new Enemy(CVector2D(1576, 559), false);
         new Enemy(CVector2D(3091, 349), false);
+        new Goal(CVector2D(2300, 730));
         new UI();
         break;
     case 3:
