@@ -6,6 +6,7 @@ GameClear::GameClear()
 {
 	//‰æ‘œƒf[ƒ^‚ð•¡»
 	m_img = COPY_RESOURCE("GameClear", CImage);
+	SOUND("Stage")->Stop();
 }
 
 void GameClear::Update()

@@ -6,6 +6,8 @@ GameOver::GameOver()
 {
 	//‰æ‘œƒf[ƒ^‚ð•¡»
 	m_img = COPY_RESOURCE("GameOver", CImage);
+
+	SOUND("Stage")->Stop();
 }
 
 void GameOver::Update()
