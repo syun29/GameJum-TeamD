@@ -138,7 +138,7 @@ void Init(void)
 	//êÏë∫
 	ADD_RESOURCE("Needle", CImage::CreateImage("Image/Needle/Needle.png"));
 	//new Needle(CVector2D(1000, 500));
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy/Enemy.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy/Enemy.png",Enemy::_anim_data,293,280));
 
 
 }
