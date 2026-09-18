@@ -12,6 +12,8 @@ Title::Title()
 	m_fontSize = m_font.GetSize() * 1.2f;
 
 	Goal::m_area = 1;
+
+	SOUND("Title")->Play(true);
 }
 
 void Title::Update()
@@ -20,6 +22,9 @@ void Title::Update()
 	if (m_cnt++ > 2 && PUSH(CInput::eButton1)) {
 		//全てのオブジェクトを破棄
 		Base::KillAll();
+
+		SOUND("Title")->Stop();
+
 		//ゲームシーンへ
 		new Game();
 	}

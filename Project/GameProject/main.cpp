@@ -102,6 +102,11 @@ void Init(void)
 	ADD_RESOURCE("Title_Font", CImage::CreateImage("Image/Title/Title_Font.png"));
 	ADD_RESOURCE("BackGround", CImage::CreateImage("Image/Stage/BackGround.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal/Goal.png"));
+
+	SOUND("Title")->Load("Sound/BGM/Title.mp3", 1);
+	SOUND("Stage")->Load("Sound/BGM/Stage.mp3", 1);
+	SOUND("Bullet")->Load("Sound/SE/Bullet.mp3", 1);
+	SOUND("Enemy")->Load("Sound/SE/Enemy.mp3", 1);
 	
 	new Title();
 
@@ -251,8 +256,8 @@ int __main(int* argcp, char** argv) {
 	GL::hWnd = WindowFromDC(glDc);
 	
 	//前面ボーダー無し
-	//SetWindowLong(GL::hWnd, GWL_STYLE, WS_POPUP);
-	//SetWindowPos(GL::hWnd, HWND_TOP, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, SWP_SHOWWINDOW);
+	SetWindowLong(GL::hWnd, GWL_STYLE, WS_POPUP);
+	SetWindowPos(GL::hWnd, HWND_TOP, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, SWP_SHOWWINDOW);
 	Init();
 
 

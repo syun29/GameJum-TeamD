@@ -13,12 +13,14 @@ Bullet::Bullet(const CVector2D& pos) : Base(eType_Bullet)
 
 	m_img.SetSize(48, 48);
 	m_img.SetCenter(24, 24);
-	m_rect = CRect(-24, 24, 24, -24);
+	m_rect = CRect(-24, -24, 24, 24);
+
+	SOUND("Bullet")->Play();
 }
 
 void Bullet::Update() {
 	
-	const int move_speed = 10;
+	const int move_speed = 5;
 
 	
 	m_pos.x += move_speed * m_dir;
@@ -39,7 +41,7 @@ void Bullet::Draw() {
 	m_img.SetPos(screenPos);
 	m_img.Draw();
 
-	//DrawRect();
+	DrawRect();
 }
 
 void Bullet::Collision(Base* b)
@@ -50,6 +52,8 @@ void Bullet::Collision(Base* b)
 
 		if (Base::CollisionRect(this, b))
 		{
+			SOUND("Enemy")->Play();
+
 			b->SetKill();
 			SetKill();
 		}
