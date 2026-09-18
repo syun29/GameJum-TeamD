@@ -13,7 +13,7 @@ void Needle::Draw() {
 	m_img.SetPos(GetScreenPos(m_pos));
 	m_img.Draw();
 	m_img.SetFlipV(m_Flip);
-	DrawRect();
+	//DrawRect();
 }
 
 void Needle::Collision(Base* b)

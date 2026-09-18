@@ -41,7 +41,7 @@ void Bullet::Draw() {
 	m_img.SetPos(screenPos);
 	m_img.Draw();
 
-	DrawRect();
+	//DrawRect();
 }
 
 void Bullet::Collision(Base* b)
