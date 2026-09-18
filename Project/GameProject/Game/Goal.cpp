@@ -28,14 +28,14 @@ void Goal::AreaChange()
         new Player(CVector2D(321, 1329), false);
         new Enemy(CVector2D(2171, 769), false);
         new Goal(CVector2D(4800, 1290));
-        new UI();
+        //new UI();
         break;
     case 2:
         new Player(CVector2D(256, 1329), false);
         new Enemy(CVector2D(1576, 559), false);
         new Enemy(CVector2D(3091, 349), false);
         new Goal(CVector2D(2300, 730));
-        new UI();
+        //new UI();
         break;
     case 3:
         new GameClear();

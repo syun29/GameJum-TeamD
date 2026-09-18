@@ -18,7 +18,7 @@ Title::Title()
 
 void Title::Update()
 {
-	//ボタン１でタイトル破棄
+	//ボタン5でタイトル破棄
 	if (m_cnt++ > 2 && PUSH(CInput::eButton5)) {
 		//全てのオブジェクトを破棄
 		Base::KillAll();

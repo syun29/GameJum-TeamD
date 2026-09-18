@@ -20,7 +20,7 @@ Game::Game() :Base(eType_Scene)
 
 
 
-    new UI();
+    //new UI();
     m_cnt = 0;
     GameData::s_time = 60 * 420;   //ŠÔƒŠƒZƒbƒg
 }
