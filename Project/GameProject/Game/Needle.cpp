@@ -6,7 +6,7 @@ Needle::Needle(const CVector2D& pos,bool Flip) : Base(eType_Needle) {
 	m_pos = pos;	
 	m_img.SetSize(64*1.2, 64 * 1.2);
 	m_img.SetCenter(32 * 1.2, 64 * 1.2);
-	m_rect = CRect(-24 * 1.8, -48 * 1.8,24 * 1.8, 0 * 1.8);
+	m_rect = CRect(-24 * 1.75, -48 * 1.75,24 * 1.75, 0 * 1.75);
 	m_Flip = Flip;
 }
 void Needle::Draw() {
