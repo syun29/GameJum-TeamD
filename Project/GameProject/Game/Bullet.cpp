@@ -13,11 +13,12 @@ Bullet::Bullet(const CVector2D& pos) : Base(eType_Bullet)
 
 	m_img.SetSize(48, 48);
 	m_img.SetCenter(24, 24);
+	m_rect = CRect(-24, 24, 24, -24);
 }
 
 void Bullet::Update() {
 	
-	const int move_speed = 20;
+	const int move_speed = 10;
 
 	
 	m_pos.x += move_speed * m_dir;
@@ -38,9 +39,19 @@ void Bullet::Draw() {
 	m_img.SetPos(screenPos);
 	m_img.Draw();
 
-
+	//DrawRect();
 }
 
-void Bullet::Collision(Base* b) {
+void Bullet::Collision(Base* b)
+{
+	switch (b->m_type)
+	{
+	case eType_Enemy:
 
+		if (Base::CollisionRect(this, b))
+		{
+			b->SetKill();
+			SetKill();
+		}
+	}
 }

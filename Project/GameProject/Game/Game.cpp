@@ -13,7 +13,7 @@ Game::Game() :Base(eType_Scene)
     
     new Field(0);
     new Player(CVector2D(256, 1329), false);
-    new Enemy(CVector2D(300, 1250),true);
+    new Enemy(CVector2D(900, 1250),true);
     new Goal(CVector2D(3200, 1275));
 
     

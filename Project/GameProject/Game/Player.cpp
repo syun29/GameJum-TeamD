@@ -217,7 +217,7 @@ void Player::Draw()
 	}
 	//FONT_T()->Draw(10, 350, 1, 1, 1, "%f:XÀ•W %f:YÀ•W",m_pos.x,m_pos.y);
 	m_img.Draw();
-	DrawRect();
+	//DrawRect();
 	//”½“]İ’è
 	m_img.SetFlipH(m_flip);
 }
