@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "GameOver.h"
 
-#define MOVE_DIST 300.0f
+#define MOVE_DIST 400.0f
 
 // コンストラクタ（出現位置と向きの初期化）
 Enemy::Enemy(const CVector2D& pos, bool flip) : Base(eType_Enemy) {
@@ -22,14 +22,14 @@ Enemy::Enemy(const CVector2D& pos, bool flip) : Base(eType_Enemy) {
 
 	m_img.ChangeAnimation(eAnimRun);
 
-	//プレイヤーのポインタを取得
-	mp_player = dynamic_cast<Player*>(Base::FindObject(eType_Player));
 
 }
 
 // 更新処理
 void Enemy::Update()
 { 
+	//プレイヤーのポインタ
+	Player* mp_player = dynamic_cast<Player*>(Base::FindObject(eType_Player));
 	//プレイヤーまでのベクトルを求める
 	CVector2D vec = m_pos - mp_player->m_pos;
 	//距離を求める

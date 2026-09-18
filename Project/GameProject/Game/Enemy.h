@@ -1,8 +1,6 @@
 #pragma once
 #include "../Base/Base.h"
 
-class Player;
-
 class Enemy : public Base {
 	enum {
 		eAnimRun,
@@ -14,8 +12,6 @@ private:
 	int m_state; // 状態管理用変数
 	bool m_is_ground; // 接地フラグ
 
-	//プレイヤーのポインタ
-	Player* mp_player;
 
 public:
 	// コンストラクタ（出現位置と向きを設定）
